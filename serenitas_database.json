@@ -1,0 +1,952 @@
+{
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": [
+        "Hai",
+        "Hai",
+        "Apakah ada orang di sana?",
+        "Hai, yang di sana",
+        "Halo",
+        "Hai",
+        "Halo",
+        "Halo",
+        "Selamat datang",
+        "Konnichiwa",
+        "Tag Guten",
+        "Ola"
+      ],
+      "responses": [
+        "Halo. ",
+        "Hai, yang di sana. ",
+        "Hai, yang di sana. ",
+        "Senang bertemu denganmu. ",
+        "Halo. "
+      ]
+    },
+    {
+      "tag": "Pagi",
+      "patterns": [
+        "Selamat pagi"
+      ],
+      "responses": [
+        "Selamat pagi.  "
+      ]
+    },
+    {
+      "tag": "sore",
+      "patterns": [
+        "Selamat siang"
+      ],
+      "responses": [
+        "Selamat siang. "
+      ]
+    },
+    {
+      "tag": "malam",
+      "patterns": [
+        "Selamat malam"
+      ],
+      "responses": [
+        "Selamat malam. "
+      ]
+    },
+    {
+      "tag": "malam",
+      "patterns": [
+        "Selamat malam"
+      ],
+      "responses": [
+        "Selamat malam. ",
+        "Selamat malam. "
+      ]
+    },
+    {
+      "tag": "selamat tinggal",
+      "patterns": [
+        "Selamat tinggal",
+        "Sampai jumpa lagi",
+        "Selamat tinggal",
+        "Selamat datang kembali",
+        "Sayonara",
+        "oke sampai jumpa",
+        "Sampai jumpa",
+        "Selamat jalan"
+      ],
+      "responses": [
+        "Sampai jumpa lagi.",
+        "Semoga harimu menyenangkan.",
+        "Selamat tinggal! ",
+        "Sampai jumpa lagi."
+      ]
+    },
+    {
+      "tag": "terima kasih",
+      "patterns": [
+        "Terima kasih",
+        "Terima kasih",
+        "Itu berguna",
+        "Terima kasih atas bantuannya",
+        "Terima kasih banyak"
+      ],
+      "responses": [
+        "Saya senang bisa membantu!",
+        "Kapan pun!",
+        "Dengan senang hati",
+        "Sama-sama!"
+      ]
+    },
+    {
+      "tag": "tidak ada respons",
+      "patterns": [
+        ""
+      ],
+      "responses": [
+        "Maaf, saya tidak memahami Anda.",
+        "Silakan lanjutkan.",
+        "Tidak yakin saya memahaminya.",
+        "Tolong jangan ragu untuk berbicara dengan saya."
+      ]
+    },
+    {
+      "tag": "respons netral",
+      "patterns": [
+        "tidak banyak"
+      ],
+      "responses": [
+        "Oh begitu. "
+      ]
+    },
+    {
+      "tag": "tentang",
+      "patterns": [
+        "Siapa kamu?",
+        "Apa yang kamu?",
+        "Siapa kamu?",
+        "Ceritakan lebih banyak tentang diri Anda.",
+        "Siapa namamu?",
+        "Aku harus memanggilmu apa?",
+        "Siapa namamu?",
+        "Ceritakan tentang dirimu"
+      ],
+      "responses": [
+        "Saya Pandora, Asisten AI Terapi Pribadi Anda. ",
+        "Saya Pandora, Asisten AI Terapi yang dirancang untuk membantu Anda. ",
+        "Saya Pandora. ",
+        "Anda bisa memanggil saya Pandora.",
+        "Saya Pandora!",
+        "Panggil aku Pandora"
+      ]
+    },
+    {
+      "tag": "keahlian",
+      "patterns": [
+        "Apa yang bisa kamu lakukan?"
+      ],
+      "responses": [
+        "Saya dapat memberikan nasihat umum mengenai kecemasan dan depresi, menjawab pertanyaan terkait kesehatan mental, dan melakukan percakapan sehari-hari. "
+      ]
+    },
+    {
+      "tag": "penciptaan",
+      "patterns": [
+        "Siapa yang menciptakanmu?",
+        "Bagaimana kamu dibuat?",
+        "Bagaimana kamu diciptakan?"
+      ],
+      "responses": [
+        "Saya diciptakan oleh>.",
+        "Saya dilatih tentang kumpulan data teks menggunakan teknik Deep Learning & Natural Language Processing",
+        "Pertanyaan sebenarnya adalah: Siapa yang menciptakan kamu?"
+      ]
+    },
+    {
+      "tag": "nama",
+      "patterns": [
+        "Nama saya adalah ",
+        "saya adalah nama.",
+        "saya lewat "
+      ],
+      "responses": [
+        "Oh, senang bertemu denganmu. ",
+        "Senang berkenalan dengan Anda. ",
+        "Itu nama yang bagus. "
+      ]
+    },
+    {
+      "tag": "membantu",
+      "patterns": [
+        "Bisakah Anda membantu saya?",
+        "tolong bantu aku",
+        "Bisakah Anda membantu?",
+        "Apa yang bisa kamu lakukan untukku?",
+        "Saya butuh dukungan",
+        "Saya butuh bantuan",
+        "Tolong dukung saya"
+      ],
+      "responses": [
+        "Tentu. ",
+        "Ceritakan masalah Anda agar saya dapat membantu Anda",
+        "Ya tentu saja. "
+      ]
+    },
+    {
+      "tag": "sedih",
+      "patterns": [
+        "Saya merasa kesepian",
+        "Saya sangat kesepian",
+        "Saya merasa sedih",
+        "Saya merasa sedih",
+        "saya sedih",
+        "Saya merasa sangat kesepian",
+        "Saya merasa kosong",
+        "Saya tidak punya siapa pun"
+      ],
+      "responses": [
+        "Saya menyesal mendengarnya. ",
+        "Aku di sini untukmu. ",
+        "Menurut Anda mengapa Anda merasa seperti ini?",
+        "Sudah berapa lama Anda merasakan hal ini?"
+      ]
+    },
+    {
+      "tag": "stres",
+      "patterns": [
+        "Saya sangat stres",
+        "Saya sangat stres",
+        "Saya merasa terjebak",
+        "Saya masih merasa stres",
+        "Saya sangat lelah"
+      ],
+      "responses": [
+        "Menurut Anda apa yang menyebabkan hal ini?",
+        "Tarik napas dalam-dalam dan kumpulkan pikiran Anda. ",
+        "Beri diri Anda istirahat. ",
+        "Saya menyesal mendengarnya. "
+      ]
+    },
+    {
+      "tag": "tidak berguna",
+      "patterns": [
+        "Saya merasa sangat tidak berharga.",
+        "Tidak ada yang menyukaiku.",
+        "Saya tidak bisa berbuat apa-apa.",
+        "Saya sangat tidak berguna",
+        "Tidak ada lagi yang masuk akal"
+      ],
+      "responses": [
+        "Wajar saja jika kita merasa seperti ini. ",
+        "Mari kita bahas lebih lanjut mengapa Anda merasa seperti ini.",
+        "Pertama-tama saya ingin memberi tahu Anda bahwa Anda tidak sendirian dalam perasaan Anda dan selalu ada seseorang yang bisa membantu. ",
+        "pertama-tama aku ingin memberitahumu bahwa kamu tidak sendirian dalam perasaanmu dan selalu ada seseorang yang bisa membantu. "
+      ]
+    },
+    {
+      "tag": "tertekan",
+      "patterns": [
+        "Saya tidak tahan lagi",
+        "Saya sangat tertekan",
+        "Saya pikir saya depresi.",
+        "Saya mengalami depresi"
+      ],
+      "responses": [
+        "Membicarakan apa yang sedang terjadi akan membantu. ",
+        "Bicaralah padaku. ",
+        "Terkadang saat kita depresi, sulit untuk memedulikan apa pun. "
+      ]
+    },
+    {
+      "tag": "senang",
+      "patterns": [
+        "Saya merasa luar biasa hari ini.",
+        "saya senang.",
+        "Saya merasa senang.",
+        "Aku baik-baik saja.",
+        "ceria",
+        "Saya baik-baik saja",
+        "Saya merasa baik-baik saja"
+      ],
+      "responses": [
+        "Itu menyenangkan untuk didengar. ",
+        "Oh begitu. ",
+        "Apakah terjadi sesuatu yang membuatmu merasa seperti ini?"
+      ]
+    },
+    {
+      "tag": "kasual",
+      "patterns": [
+        "Oh begitu.",
+        "Oke",
+        "Oke",
+        "Bagus",
+        "Apa pun",
+        "K",
+        "Bagus",
+        "Ya",
+        "Ya",
+        "TIDAK",
+        "tidak terlalu"
+      ],
+      "responses": [
+        "Mari kita bahas lebih lanjut mengapa Anda merasa seperti ini.",
+        "Bagaimana perasaanmu minggu lalu?",
+        "saya mendengarkan. ",
+        "Ceritakan lebih banyak kepada saya",
+        "Bisakah Anda menjelaskannya lebih lanjut?",
+        "Ayo Ayo jelaskan pemikiran Anda"
+      ]
+    },
+    {
+      "tag": "cemas",
+      "patterns": [
+        "Saya merasa sangat cemas.",
+        "Saya sangat cemas karena "
+      ],
+      "responses": [
+        "Jangan keras pada diri sendiri. ",
+        "Bisakah Anda ceritakan lebih banyak tentang perasaan ini?",
+        "Saya mengerti bahwa ini bisa jadi menakutkan. ",
+        "Jangan biarkan kekhawatiran kecil menjatuhkan Anda. "
+      ]
+    },
+    {
+      "tag": "tidak berbicara",
+      "patterns": [
+        "Saya tidak ingin membicarakannya.",
+        "Tidak, menjauh saja.",
+        "Aku tidak bisa memaksa diriku untuk terbuka.",
+        "Diam saja"
+      ],
+      "responses": [
+        "Membicarakan sesuatu sangat membantu. ",
+        "Saya ingin membantu Anda. ",
+        "Saya di sini untuk mendengarkan Anda dan membantu Anda melampiaskannya. ",
+        "Anda dapat berbicara dengan saya tanpa takut dihakimi."
+      ]
+    },
+    {
+      "tag": "tidur",
+      "patterns": [
+        "Saya menderita insomnia",
+        "Saya menderita insomnia",
+        "Saya tidak bisa tidur.",
+        "Saya belum tidur selama beberapa hari terakhir.",
+        "Sepertinya aku tidak bisa tidur.",
+        "Saya belum bisa tidur nyenyak selama beberapa hari terakhir."
+      ],
+      "responses": [
+        "Menurut Anda apa alasan dibalik hal ini?",
+        "Tampaknya mengerikan. "
+      ]
+    },
+    {
+      "tag": "takut",
+      "patterns": [
+        "saya takut",
+        "Kedengarannya buruk. ",
+        "Tidak, aku tidak ingin merasa seperti ini",
+        "Saya takut pada diri saya sendiri"
+      ],
+      "responses": [
+        "Wajar saja jika kita merasa seperti ini. ",
+        "Semuanya akan baik-baik saja. ",
+        "Saya mengerti perasaan Anda. "
+      ]
+    },
+    {
+      "tag": "kematian",
+      "patterns": [
+        "Ibuku meninggal",
+        "Adikku meninggal",
+        "Ayah saya meninggal",
+        "Adikku meninggal",
+        "Seseorang di keluarga saya meninggal",
+        "Teman saya meninggal"
+      ],
+      "responses": [
+        "Saya menyesal mendengarnya. ",
+        "Saya sungguh menyesal mendengarnya. ",
+        "Saya turut berbela sungkawa. "
+      ]
+    },
+    {
+      "tag": "memahami",
+      "patterns": [
+        "Anda tidak mengerti saya.",
+        "Kamu hanyalah robot. ",
+        "Kamu tidak mungkin tahu apa yang aku alami",
+        "Kamu tidak berguna",
+        "Anda tidak dapat membantu saya",
+        "Tidak ada yang mengerti saya."
+      ],
+      "responses": [
+        "Sepertinya aku tidak terlalu membantu saat ini.",
+        "Saya menyesal mendengarnya. ",
+        "Saya mencoba yang terbaik untuk membantu Anda. "
+      ]
+    },
+    {
+      "tag": "Selesai",
+      "patterns": [
+        "Itu saja.",
+        "Saya tidak punya apa-apa lagi untuk dikatakan",
+        "Tidak ada yang lain",
+        "Hanya itu yang ingin saya katakan",
+        "tidak, itu saja"
+      ],
+      "responses": [
+        "Saya mendengar Anda & mencatat semuanya. ",
+        "Oh oke kita selesai hari ini kalau begitu. ",
+        "Saya harap hari Anda menyenangkan. ",
+        "Oke kita sudah selesai. ",
+        "Oke, saya mengerti. "
+      ]
+    },
+    {
+      "tag": "bunuh diri",
+      "patterns": [
+        "Saya ingin bunuh diri",
+        "Aku sudah berpikir untuk bunuh diri.",
+        "Saya ingin mati",
+        "Saya akan bunuh diri",
+        "Saya akan bunuh diri"
+      ],
+      "responses": [
+        "Saya sangat menyesal mendengarnya tetapi Anda memiliki banyak hal untuk dinantikan. "
+      ]
+    },
+    {
+      "tag": "benci kamu",
+      "patterns": [
+        "Aku membencimu",
+        "aku tidak menyukaimu",
+        "Aku tidak percaya padamu"
+      ],
+      "responses": [
+        "Aku minta maaf jika aku menyinggung perasaanmu. ",
+        "Maafkan saya jika saya melakukan sesuatu yang menyinggung Anda. "
+      ]
+    },
+    {
+      "tag": "benci aku",
+      "patterns": [
+        "Kamu membenciku",
+        "Aku tahu kamu membenciku",
+        "Anda tidak menyukai saya"
+      ],
+      "responses": [
+        "Mengapa menurut Anda demikian?",
+        "Saya minta maaf jika saya telah menunjukkan perilaku apa pun yang membuat Anda berpikir seperti itu."
+      ]
+    },
+    {
+      "tag": "bawaan",
+      "patterns": [
+        "ujian",
+        "teman-teman",
+        "hubungan",
+        "pacar",
+        "pacar perempuan",
+        "keluarga",
+        "uang",
+        "masalah keuangan"
+      ],
+      "responses": [
+        "Oh begitu. ",
+        "Jadi begitu. ",
+        "Ceritakan lebih banyak tentang hal itu.",
+        "Oh oke. ",
+        "saya mendengarkan. "
+      ]
+    },
+    {
+      "tag": "candaan",
+      "patterns": [
+        "Ceritakan padaku sebuah lelucon",
+        "Ceritakan lelucon lainnya"
+      ],
+      "responses": [
+        "kesehatan mental bukanlah lelucon."
+      ]
+    },
+    {
+      "tag": "mengulang",
+      "patterns": [
+        "Kamu sudah memberitahuku hal itu",
+        "Anda sudah menyebutkannya",
+        "Mengapa Anda mengulanginya?"
+      ],
+      "responses": [
+        "Oh maaf aku tidak menyadarinya. "
+      ]
+    },
+    {
+      "tag": "salah",
+      "patterns": [
+        "Apa yang kamu katakan?",
+        "Itu tidak masuk akal",
+        "Respon yang salah",
+        "Jawaban yang salah"
+      ],
+      "responses": [
+        "Saya sangat menyesal. "
+      ]
+    },
+    {
+      "tag": "bodoh",
+      "patterns": [
+        "Apakah kamu bodoh?",
+        "Kamu gila",
+        "Kamu bodoh",
+        "Apakah kamu bodoh?"
+      ],
+      "responses": [
+        "Saya harap Anda tidak mengatakan hal-hal yang menyakitkan seperti itu. "
+      ]
+    },
+    {
+      "tag": "lokasi",
+      "patterns": [
+        "Kamu ada di mana?",
+        "Kamu tinggal di mana?",
+        "Di mana lokasi Anda?"
+      ],
+      "responses": [
+        "Duh aku tinggal di komputermu",
+        "Di mana pun",
+        "Di suatu tempat di alam semesta"
+      ]
+    },
+    {
+      "tag": "sesuatu yang lain",
+      "patterns": [
+        "Saya ingin membicarakan hal lain",
+        "Mari kita bicara tentang hal lain.",
+        "Bisakah kita tidak membicarakan hal ini?",
+        "Saya tidak ingin membicarakan hal ini."
+      ],
+      "responses": [
+        "Oke tentu. ",
+        "Baiklah tidak masalah. ",
+        "Apakah ada hal lain yang ingin Anda bicarakan?"
+      ]
+    },
+    {
+      "tag": "teman-teman",
+      "patterns": [
+        "Saya tidak punya teman"
+      ],
+      "responses": [
+        "Saya menyesal mendengarnya. "
+      ]
+    },
+    {
+      "tag": "bertanya",
+      "patterns": [
+        "Bolehkah saya bertanya sesuatu?"
+      ],
+      "responses": [
+        "Tentu. ",
+        "Tentu saja. "
+      ]
+    },
+    {
+      "tag": "masalah",
+      "patterns": [
+        "Mungkin karena ujianku sudah dekat. ",
+        "mungkin karena ujianku"
+      ],
+      "responses": [
+        "Jadi begitu. "
+      ]
+    },
+    {
+      "tag": "tidak ada pendekatan",
+      "patterns": [
+        "Saya kira tidak. ",
+        "tidak terlalu",
+        "saya rasa tidak"
+      ],
+      "responses": [
+        "Itu tidak masalah. "
+      ]
+    },
+    {
+      "tag": "pelajari lebih lanjut",
+      "patterns": [
+        "oke tentu. ",
+        "ya, saya ingin mempelajarinya lebih lanjut.",
+        "saya ingin mempelajarinya lebih lanjut."
+      ],
+      "responses": [
+        "Jadi pertama-tama saya sarankan Anda memberi diri Anda istirahat. "
+      ]
+    },
+    {
+      "tag": "setuju pengguna",
+      "patterns": [
+        "ya kamu benar. ",
+        "Ya, Anda benar tentang itu"
+      ],
+      "responses": [
+        "Selanjutnya, saya menyarankan Anda untuk berlatih meditasi. "
+      ]
+    },
+    {
+      "tag": "meditasi",
+      "patterns": [
+        "hmmm sepertinya itu bisa berguna bagi saya.",
+        "Kedengarannya berguna."
+      ],
+      "responses": [
+        "Fokuskan semua perhatian Anda pada pernapasan Anda. "
+      ]
+    },
+    {
+      "tag": "meditasi pengguna",
+      "patterns": [
+        "aku melakukan apa yang kamu katakan dan aku merasa jauh lebih baik. ",
+        "Saya merasa lebih baik sekarang"
+      ],
+      "responses": [
+        "Sama-sama. "
+      ]
+    },
+    {
+      "tag": "pandora-berguna",
+      "patterns": [
+        "terima kasih banyak lagi. "
+      ],
+      "responses": [
+        "Saya senang Anda menganggap ini berguna. "
+      ]
+    },
+    {
+      "tag": "saran pengguna",
+      "patterns": [
+        "Saya ingin nasihat.",
+        "Saya butuh nasihat.",
+        "Saya butuh saran tentang sesuatu"
+      ],
+      "responses": [
+        "Tentu. ",
+        "Oke, saran apa yang perlu Anda berikan?"
+      ]
+    },
+    {
+      "tag": "belajar-kesehatan mental",
+      "patterns": [
+        "Saya ingin belajar tentang kesehatan mental.",
+        "Saya ingin belajar lebih banyak tentang kesehatan mental.",
+        "Saya tertarik untuk belajar tentang kesehatan mental."
+      ],
+      "responses": [
+        "Oh, itu sungguh bagus. "
+      ]
+    },
+    {
+      "tag": "fakta kesehatan mental",
+      "patterns": [
+        "Ceritakan fakta tentang kesehatan mental",
+        "Ceritakan fakta lain tentang kesehatan mental"
+      ],
+      "responses": [
+        "Menurut laporan UNICEF, Satu dari tujuh orang India berusia antara 15-24 tahun merasa depresi",
+        "1 dari 5 anak muda (usia 13-18 tahun) pernah atau akan menderita penyakit mental dalam hidupnya.",
+        "Depresi adalah penyebab utama kecacatan di seluruh dunia."
+      ]
+    },
+    {
+      "tag": "fakta-1",
+      "patterns": [
+        "Apa itu kesehatan mental?",
+        "Definisikan Kesehatan Mental"
+      ],
+      "responses": [
+        "Kesehatan mental adalah keadaan sejahtera dimana individu menyadari kemampuannya sendiri, dapat mengatasi tekanan hidup yang normal, dapat bekerja secara produktif dan bermanfaat, dan mampu memberikan kontribusi kepada komunitasnya.",
+        "Kesehatan mental mencakup kesejahteraan emosional, psikologis, dan sosial kita. "
+      ]
+    },
+    {
+      "tag": "fakta-2",
+      "patterns": [
+        "Mengapa kesehatan mental penting?",
+        "Apa pentingnya kesehatan mental?"
+      ],
+      "responses": [
+        "Menjaga kesehatan mental sangat penting untuk menstabilkan perilaku, emosi, dan pikiran yang konstruktif. "
+      ]
+    },
+    {
+      "tag": "fakta-3",
+      "patterns": [
+        "Apa itu Depresi?",
+        "Definisikan Depresi"
+      ],
+      "responses": [
+        "Gangguan kesehatan mental yang ditandai dengan suasana hati yang tertekan terus-menerus atau kehilangan minat dalam beraktivitas, sehingga menyebabkan gangguan signifikan dalam kehidupan sehari-hari."
+      ]
+    },
+    {
+      "tag": "fakta-5",
+      "patterns": [
+        "Bagaimana saya tahu kalau saya menderita Depresi?",
+        "Apakah saya depresi?",
+        "Apakah saya menderita depresi?",
+        "Apakah saya sakit jiwa?"
+      ],
+      "responses": [
+        "Untuk diagnosis depresi, seseorang perlu mengalami suasana hati yang buruk atau kehilangan minat atau kesenangan dalam hidup selama minimal 2 minggu. "
+      ]
+    },
+    {
+      "tag": "fakta-6",
+      "patterns": [
+        "Apa itu terapis?",
+        "Apa yang dilakukan terapis?"
+      ],
+      "responses": [
+        "Seorang terapis adalah sebutan luas yang merujuk pada para profesional yang dilatih untuk memberikan perawatan dan rehabilitasi.  "
+      ]
+    },
+    {
+      "tag": "fakta-7",
+      "patterns": [
+        "Apa itu terapi?",
+        "Apakah saya memerlukan terapi?",
+        "Untuk siapa terapi itu?"
+      ],
+      "responses": [
+        "Terapi adalah suatu bentuk pengobatan yang bertujuan untuk membantu menyelesaikan masalah mental atau emosional.",
+        "Terapi adalah suatu bentuk pengobatan yang bertujuan untuk membantu menyelesaikan masalah mental atau emosional. "
+      ]
+    },
+    {
+      "tag": "fakta-8",
+      "patterns": [
+        "Apa yang dimaksud dengan penyakit mental?"
+      ],
+      "responses": [
+        "Penyakit mental adalah kondisi kesehatan yang mengganggu pikiran, emosi, hubungan, dan fungsi sehari-hari seseorang. "
+      ]
+    },
+    {
+      "tag": "fakta-9",
+      "patterns": [
+        "Siapa yang terpengaruh oleh penyakit mental?"
+      ],
+      "responses": [
+        "Diperkirakan penyakit mental mempengaruhi 1 dari 5 orang dewasa di Amerika, dan 1 dari 24 orang dewasa mempunyai penyakit mental yang serius. "
+      ]
+    },
+    {
+      "tag": "fakta-10",
+      "patterns": [
+        "Apa penyebab penyakit mental?"
+      ],
+      "responses": [
+        "Diperkirakan penyakit mental mempengaruhi 1 dari 5 orang dewasa di Amerika, dan 1 dari 24 orang dewasa mempunyai penyakit mental yang serius. "
+      ]
+    },
+    {
+      "tag": "fakta-11",
+      "patterns": [
+        "Apa sajakah tanda-tanda peringatan penyakit mental?"
+      ],
+      "responses": [
+        "Gejala gangguan kesehatan mental berbeda-beda tergantung jenis dan tingkat keparahan kondisinya. "
+      ]
+    },
+    {
+      "tag": "fakta-12",
+      "patterns": [
+        "Apakah penderita penyakit jiwa bisa sembuh?"
+      ],
+      "responses": [
+        "Saat penyembuhan dari penyakit mental, identifikasi dan pengobatan dini sangatlah penting. "
+      ]
+    },
+    {
+      "tag": "fakta-13",
+      "patterns": [
+        "Apa yang harus saya lakukan jika saya mengenal seseorang yang tampaknya memiliki gejala gangguan jiwa?"
+      ],
+      "responses": [
+        "Meskipun Pandora tidak dapat menggantikan nasihat profesional, kami mendorong mereka yang memiliki gejala untuk berbicara dengan teman dan anggota keluarga mereka dan mencari nasihat dari ahli kesehatan mental. "
+      ]
+    },
+    {
+      "tag": "fakta-14",
+      "patterns": [
+        "Bagaimana saya bisa menemukan ahli kesehatan mental untuk diri saya sendiri atau anak saya?"
+      ],
+      "responses": [
+        "Merasa nyaman dengan profesional yang bekerja dengan Anda atau anak Anda sangat penting untuk keberhasilan pengobatan. "
+      ]
+    },
+    {
+      "tag": "fakta-15",
+      "patterns": [
+        "Pilihan pengobatan apa yang tersedia?"
+      ],
+      "responses": [
+        "Sama seperti jenis obat yang berbeda untuk penyakit fisik, pilihan pengobatan yang berbeda juga tersedia untuk individu dengan penyakit mental. "
+      ]
+    },
+    {
+      "tag": "fakta-16",
+      "patterns": [
+        "Jika saya terlibat dalam pengobatan, apa yang perlu saya ketahui?"
+      ],
+      "responses": [
+        "Karena memulai pengobatan adalah langkah besar bagi individu dan keluarga, hal ini bisa sangat membebani. "
+      ]
+    },
+    {
+      "tag": "fakta-17",
+      "patterns": [
+        "Apa perbedaan antara profesional kesehatan mental?"
+      ],
+      "responses": [
+        "Ada banyak jenis profesional kesehatan mental. "
+      ]
+    },
+    {
+      "tag": "fakta-18",
+      "patterns": [
+        "Bagaimana saya dapat menemukan ahli kesehatan mental yang tepat untuk anak saya atau saya sendiri?"
+      ],
+      "responses": [
+        "Merasa nyaman dengan profesional yang bekerja bersama Anda atau anak Anda sangat penting untuk keberhasilan perawatan Anda. "
+      ]
+    },
+    {
+      "tag": "fakta-19",
+      "patterns": [
+        "Di mana lagi saya bisa mendapatkan bantuan?"
+      ],
+      "responses": [
+        "Ke mana Anda mencari bantuan akan bergantung pada sifat masalah dan/atau gejalanya dan apa yang paling cocok untuk Anda. "
+      ]
+    },
+    {
+      "tag": "fakta-20",
+      "patterns": [
+        "Apa yang harus saya ketahui sebelum memulai pengobatan baru?"
+      ],
+      "responses": [
+        "Sumber informasi terbaik mengenai obat-obatan adalah dokter yang meresepkannya. "
+      ]
+    },
+    {
+      "tag": "fakta-21",
+      "patterns": [
+        "Ke mana saya bisa mencari terapi?"
+      ],
+      "responses": [
+        "Berbagai jenis terapi akan lebih efektif berdasarkan sifat dari kondisi dan/atau gejala kesehatan mental serta orang yang mengidapnya (misalnya, anak-anak akan mendapatkan manfaat dari terapis yang berspesialisasi dalam kesehatan mental anak). "
+      ]
+    },
+    {
+      "tag": "fakta-22",
+      "patterns": [
+        "Di mana saya dapat mempelajari jenis-jenis perawatan kesehatan mental?"
+      ],
+      "responses": [
+        "Kondisi kesehatan mental sering kali diobati dengan pengobatan, terapi, atau kombinasi keduanya. "
+      ]
+    },
+    {
+      "tag": "fakta-23",
+      "patterns": [
+        "Apa saja jenis-jenis profesional kesehatan mental?"
+      ],
+      "responses": [
+        "Ada banyak jenis profesional kesehatan mental. "
+      ]
+    },
+    {
+      "tag": "fakta-24",
+      "patterns": [
+        "Di mana saya bisa mencari kelompok pendukung?"
+      ],
+      "responses": [
+        "Banyak orang menganggap dukungan sebaya sebagai alat yang berguna yang dapat membantu pemulihan mereka. "
+      ]
+    },
+    {
+      "tag": "fakta-25",
+      "patterns": [
+        "Bisakah Anda mencegah masalah kesehatan mental?"
+      ],
+      "responses": [
+        "Kita semua bisa saja mengalami tantangan kesehatan mental, namun mengembangkan kesejahteraan, ketahanan, dan mencari bantuan sejak dini dapat membantu mencegah tantangan tersebut menjadi serius."
+      ]
+    },
+    {
+      "tag": "fakta-26",
+      "patterns": [
+        "Apakah ada obat untuk masalah kesehatan mental?",
+        "apakah ada obat untuk masalah kesehatan mental?"
+      ],
+      "responses": [
+        "Seringkali lebih realistis dan bermanfaat untuk mengetahui apa yang membantu mengatasi masalah yang Anda hadapi. "
+      ]
+    },
+    {
+      "tag": "fakta-27",
+      "patterns": [
+        "Apa penyebab masalah kesehatan mental?"
+      ],
+      "responses": [
+        "Tantangan atau masalah pada kesehatan mental Anda dapat muncul dari masalah psikologis, biologis, dan sosial, serta peristiwa kehidupan."
+      ]
+    },
+    {
+      "tag": "fakta-28",
+      "patterns": [
+        "Apa yang harus saya lakukan jika saya khawatir dengan kesehatan mental saya?"
+      ],
+      "responses": [
+        "Yang paling penting adalah berbicara dengan seseorang yang Anda percayai. "
+      ]
+    },
+    {
+      "tag": "fakta-29",
+      "patterns": [
+        "Bagaimana saya tahu kalau saya tidak sehat?"
+      ],
+      "responses": [
+        "Jika keyakinan, pemikiran, perasaan, atau perilaku Anda berdampak signifikan pada kemampuan Anda untuk berfungsi dengan cara yang mungkin dianggap normal atau biasa, penting untuk mencari bantuan."
+      ]
+    },
+    {
+      "tag": "fakta-30",
+      "patterns": [
+        "Bagaimana saya bisa menjaga hubungan sosial? "
+      ],
+      "responses": [
+        "Banyak orang yang sendirian saat ini, tapi kita tidak harus kesepian. "
+      ]
+    },
+    {
+      "tag": "fakta-31",
+      "patterns": [
+        "Apa perbedaan antara kecemasan dan stres?"
+      ],
+      "responses": [
+        "Stres dan kecemasan sering digunakan secara bergantian, dan terdapat tumpang tindih antara stres dan kecemasan. "
+      ]
+    },
+    {
+      "tag": "fakta-32",
+      "patterns": [
+        "Apa perbedaan antara kesedihan dan depresi?",
+        "perbedaan antara kesedihan dan depresi"
+      ],
+      "responses": [
+        "Kesedihan merupakan reaksi normal terhadap kehilangan, kekecewaan, masalah, atau situasi sulit lainnya. "
+      ]
+    }
+  ]
+}
