@@ -4,13 +4,11 @@ import 'package:serenitas/controller/account.dart';
 import '../controller/navigation.dart';
 
 class CustomDrawer extends StatefulWidget {
-  final String imagepath;
   final Color boxColor;
   final List<Map<String, String>> buttons;
 
   const CustomDrawer({
     Key? key,
-    required this.imagepath,
     required this.boxColor,
     required this.buttons,
   }) : super(key: key);
@@ -31,22 +29,20 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return GestureDetector(
       onHorizontalDragUpdate: (details) {
         setState(() {
-          // Update drag distance while dragging horizontally
           _dragDistance += details.primaryDelta!;
           if (_dragDistance < 0) {
-            _dragDistance = 0; // Prevent dragging past the left edge
+            _dragDistance = 0;
           } else if (_dragDistance > _maxDragDistance) {
-            _dragDistance = _maxDragDistance; // Limit drag to max distance
+            _dragDistance = _maxDragDistance;
           }
         });
       },
       onHorizontalDragEnd: (details) {
-        // Decide whether the drawer should be fully open or closed after the drag
         setState(() {
           if (_dragDistance > _maxDragDistance / 2) {
-            _dragDistance = _maxDragDistance; // Snap to fully open
+            _dragDistance = _maxDragDistance;
           } else {
-            _dragDistance = 0.0; // Snap to fully closed
+            _dragDistance = 0.0;
           }
         });
       },
@@ -55,7 +51,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage(widget.imagepath),
+                backgroundImage: loginController.profilePicture != null
+                    ? MemoryImage(loginController.profilePicture!)
+                    : const AssetImage('assets/profile.png') as ImageProvider,
               ),
               accountName: Text(loginController.currentUser ?? 'Guest'),
               accountEmail: Text(loginController.currentGender ?? 'Not Specified'),
@@ -70,7 +68,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     title: Text(button['name'] ?? 'Unknown'),
                     onTap: () {
                       navigationProvider.navigate(
-                        context, button['target'] ?? '/');
+                          context, button['target'] ?? '/');
                     },
                   );
                 },

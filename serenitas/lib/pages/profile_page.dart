@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:serenitas/controller/account.dart';
 import 'package:serenitas/pages/change_profile.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -16,13 +18,15 @@ class ProfilePage extends StatelessWidget {
           children: [
             const SizedBox(height: 20),
             // Avatar and Username
-            const CircleAvatar(
+            CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage('assets/images/user_avatar.png'),
+              backgroundImage: Provider.of<AccountData>(context).profilePicture != null
+                    ? MemoryImage(Provider.of<AccountData>(context).profilePicture!)
+                    : const AssetImage('assets/profile.png') as ImageProvider
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Username',
+            Text(
+              Provider.of<AccountData>(context).currentUser ?? 'Guest',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
