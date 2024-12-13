@@ -6,6 +6,7 @@ import 'package:serenitas/widgets/side_navbar.dart';
 import 'package:serenitas/controller/account.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
@@ -31,142 +32,157 @@ class MyHomePage extends StatelessWidget {
     });
   }
 
-
   @override
-Widget build(BuildContext context) {
-  return FutureBuilder(
-    future: _checkIfFirstTime(),
-    builder: (context, snapshot) {
-      if (snapshot.connectionState == ConnectionState.waiting) {
-        return Scaffold(
-          body: Center(child: CircularProgressIndicator()), // Show loading until SharedPreferences is checked
-        );
-      }
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: _checkIfFirstTime(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
 
-      if (snapshot.data == true) {
-        // If it's the first time, show the intro screen
-        _showIntroScreen(context);
-      }
+        if (snapshot.data == true) {
+          _showIntroScreen(context);
+        }
 
-      // Otherwise, return the actual home screen
-      return Consumer<ChatController>(
-        builder: (context, chatController, child) {
-          final isInChatRoom = chatController.isInChatRoom;
-          final accountData = Provider.of<AccountData>(context);
-          final isLoggedIn = accountData.currentUser != null;
+        return Consumer2<ChatController, AccountData>(
+          builder: (context, chatController, accountData, child) {
+            final isInChatRoom = chatController.isInChatRoom;
+            final isLoggedIn = accountData.currentUser != null;
 
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.purpleAccent,
-              title: Text(isInChatRoom ? 'Chat Room' : 'Serenitas'),
-              centerTitle: true,
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: TextButton(
-                    onPressed: () {
-                      if (isLoggedIn) {
-                        _logout(context, accountData);
-                      } else {
-                        Navigator.pushNamed(context, '/login');
-                      }
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.purple,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        isLoggedIn ? 'Logout' : 'Login',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+            return Scaffold(
+              appBar: AppBar(
+                backgroundColor: Colors.purpleAccent,
+                title: Text(isInChatRoom ? 'Chat Room' : 'Serenitas'),
+                centerTitle: true,
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: TextButton(
+                      onPressed: () {
+                        if (isLoggedIn) {
+                          _logout(context, accountData, chatController);
+                        } else {
+                          Navigator.pushNamed(context, '/login');
+                        }
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Text(
+                          isLoggedIn ? 'Logout' : 'Login',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            body: isInChatRoom
-                ? _buildChatRoom(context)
-                : _buildWelcomeScreen(context, chatController),
-            drawer: CustomDrawer(
-              imagepath: 'assets/images/profile.jpg',
-              boxColor: Colors.purple,
-              buttons: [
-                {'name': 'Pengaturan', 'target': '/setting'},
-              ],
-            ),
-          );
-        },
-      );
-    },
-  );
-}
-
-Future<bool> _checkIfFirstTime() async {
-  final prefs = await SharedPreferences.getInstance();
-  bool isFirstTime = prefs.getBool('isFirstTime') ?? true;
-  if (isFirstTime) {
-    prefs.setBool('isFirstTime', false); // Set flag to false after first time
-  }
-  return isFirstTime;
-}
-
-void _showIntroScreen(BuildContext context) {
-  WidgetsBinding.instance.addPostFrameCallback((_) {
-    final introKey = GlobalKey<IntroductionScreenState>();
-
-    final pages = <PageViewModel>[
-      PageViewModel(
-        title: "Welcome",
-        body: "Selamat datang di aplikasi Serenitas, dimana aku adalah teman curhat kamu.",
-        image: Center(child: Icon(Icons.info, size: 100.0)),
-      ),
-      PageViewModel(
-        title: "Ftiur",
-        body: "Aku bisa membantu kamu dalam berbagai hal, seperti memberikan saran atau sekedar mendengarkan.",
-        image: Center(child: Icon(Icons.featured_play_list, size: 100.0)),
-      ),
-      PageViewModel(
-        title: "Get Started",
-        body: "Let's get started!",
-        image: Center(child: Icon(Icons.start, size: 100.0)),
-      ),
-    ];
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => IntroductionScreen(
-          key: introKey,
-          pages: pages,
-          onDone: () {
-            Navigator.of(context).pushReplacementNamed('/home');
+                ],
+              ),
+              body: isInChatRoom
+                  ? Stack(
+                      children: [
+                        _buildChatRoom(context),
+                        Positioned(
+                          bottom: 100,
+                          right: MediaQuery.of(context).size.width / 2 -
+                              28, // Center the button
+                          child: FloatingActionButton(
+                            onPressed: () {
+                              chatController.switchToHomePage();
+                              chatController.resetConversation();
+                            },
+                            backgroundColor: Colors.red,
+                            child: const Icon(Icons.home),
+                          ),
+                        ),
+                      ],
+                    )
+                  : _buildWelcomeScreen(context, chatController),
+              drawer: CustomDrawer(
+                boxColor: Colors.purple,
+                buttons: [
+                  {'name': 'Pengaturan', 'target': '/setting'},
+                ],
+              ),
+            );
           },
-          showNextButton: true,
-          showSkipButton: true,
-          next: const Icon(Icons.arrow_forward),
-          skip: const Text("Skip"),
-          done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
-          dotsDecorator: DotsDecorator(
-            size: Size(10.0, 10.0),
-            activeSize: Size(22.0, 10.0),
-            color: Colors.blueAccent,
-            activeColor: Colors.blue,
-            spacing: EdgeInsets.symmetric(horizontal: 3.0),
-            activeShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(25.0)),
+        );
+      },
+    );
+  }
+
+  Future<bool> _checkIfFirstTime() async {
+    final prefs = await SharedPreferences.getInstance();
+    bool isFirstTime = prefs.getBool('isFirstTime') ?? true;
+    if (isFirstTime) {
+      prefs.setBool('isFirstTime', false);
+    }
+    return isFirstTime;
+  }
+
+  void _showIntroScreen(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final introKey = GlobalKey<IntroductionScreenState>();
+
+      final pages = <PageViewModel>[
+        PageViewModel(
+          title: "Welcome",
+          body:
+              "Selamat datang di aplikasi Serenitas, dimana aku adalah teman curhat kamu.",
+          image: Center(child: Icon(Icons.info, size: 100.0)),
+        ),
+        PageViewModel(
+          title: "Fitur",
+          body:
+              "Aku bisa membantu kamu dalam berbagai hal, seperti memberikan saran atau sekedar mendengarkan.",
+          image: Center(child: Icon(Icons.featured_play_list, size: 100.0)),
+        ),
+        PageViewModel(
+          title: "Get Started",
+          body: "Let's get started!",
+          image: Center(child: Icon(Icons.start, size: 100.0)),
+        ),
+      ];
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => IntroductionScreen(
+            key: introKey,
+            pages: pages,
+            onDone: () {
+              Navigator.of(context).pushReplacementNamed('/home');
+            },
+            showNextButton: true,
+            showSkipButton: true,
+            next: const Icon(Icons.arrow_forward),
+            skip: const Text("Skip"),
+            done: const Text("Done",
+                style: TextStyle(fontWeight: FontWeight.w600)),
+            dotsDecorator: DotsDecorator(
+              size: const Size(10.0, 10.0),
+              activeSize: const Size(22.0, 10.0),
+              color: Colors.blueAccent,
+              activeColor: Colors.blue,
+              spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+              activeShape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(25.0)),
+              ),
             ),
           ),
         ),
-      ),
-    );
-  });
-}
-
+      );
+    });
+  }
 
   Widget _buildWelcomeScreen(
       BuildContext context, ChatController chatController) {
@@ -282,10 +298,12 @@ void _showIntroScreen(BuildContext context) {
     );
   }
 
-  void _handlePrediction(BuildContext context, String input, ChatController chatController) async {
+  void _handlePrediction(
+      BuildContext context, String input, ChatController chatController) async {
     if (input.isEmpty) return;
 
-    final predictionProvider = Provider.of<PredictionProvider>(context, listen: false);
+    final predictionProvider =
+        Provider.of<PredictionProvider>(context, listen: false);
 
     chatController.switchToChatRoom();
     chatController.addMessage(input, "User");
@@ -386,7 +404,8 @@ void _showIntroScreen(BuildContext context) {
     );
   }
 
-  void _logout(BuildContext context, AccountData accountData) {
+  void _logout(BuildContext context, AccountData accountData,
+      ChatController chatController) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -403,7 +422,9 @@ void _showIntroScreen(BuildContext context) {
             TextButton(
               child: const Text('Logout'),
               onPressed: () {
+                chatController.resetConversation();
                 accountData.logout();
+                chatController.switchToHomePage();
                 Navigator.of(context).pop();
               },
             ),

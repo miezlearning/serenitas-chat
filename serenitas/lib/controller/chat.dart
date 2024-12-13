@@ -13,8 +13,18 @@ class ChatController extends ChangeNotifier {
     notifyListeners();
   }
 
+  void switchToHomePage() {
+    _isInChatRoom = false;
+    notifyListeners();
+  }
+
   void addMessage(String text, String sender) {
     _messages.add({"text": text, "sender": sender});
+    notifyListeners();
+  }
+
+  void resetConversation() {
+    _messages.clear();
     notifyListeners();
   }
 }

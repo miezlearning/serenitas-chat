@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:typed_data'; // Add this import
+import 'dart:typed_data';
+import 'package:provider/provider.dart';
+import 'package:serenitas/controller/account.dart';
 
 class ChangeProfilePicturePage extends StatefulWidget {
   const ChangeProfilePicturePage({super.key});
@@ -11,43 +13,28 @@ class ChangeProfilePicturePage extends StatefulWidget {
 
 class _ChangeProfilePicturePageState extends State<ChangeProfilePicturePage> {
   final ImagePicker _imagePicker = ImagePicker();
-  Uint8List? _selectedImage; // Change type to Uint8List
 
-  Future<void> _selectFromGallery() async {
+  Future<void> _selectFromGallery(AccountData accountData) async {
     final XFile? image = await _imagePicker.pickImage(source: ImageSource.gallery);
     if (image != null) {
       final Uint8List imageBytes = await image.readAsBytes(); // Read image as bytes
-      setState(() {
-        _selectedImage = imageBytes;
-      });
+      accountData.updateProfilePicture(imageBytes);
     }
   }
 
-  Future<void> _takePhoto() async {
+  Future<void> _takePhoto(AccountData accountData) async {
     final XFile? image = await _imagePicker.pickImage(source: ImageSource.camera);
     if (image != null) {
       final Uint8List imageBytes = await image.readAsBytes(); // Read image as bytes
-      setState(() {
-        _selectedImage = imageBytes;
-      });
-    }
-  }
-
-  void _saveProfilePicture() {
-    if (_selectedImage != null) {
-      // Implement saving logic here, such as uploading to a server or saving locally
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profile picture updated successfully!')),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please select an image first.')),
-      );
+      accountData.updateProfilePicture(imageBytes);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final accountData = Provider.of<AccountData>(context);
+    final Uint8List? currentProfilePicture = accountData.profilePicture;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
@@ -66,34 +53,24 @@ class _ChangeProfilePicturePageState extends State<ChangeProfilePicturePage> {
             ListTile(
               leading: const Icon(Icons.photo_library, color: Colors.purple),
               title: const Text('Select from Gallery'),
-              onTap: _selectFromGallery,
+              onTap: () => _selectFromGallery(accountData),
             ),
             ListTile(
               leading: const Icon(Icons.camera_alt, color: Colors.purple),
               title: const Text('Take a New Photo'),
-              onTap: _takePhoto,
+              onTap: () => _takePhoto(accountData),
             ),
             const SizedBox(height: 20),
-            if (_selectedImage != null) ...[
+            if (currentProfilePicture != null) ...[
               Center(
                 child: Image.memory(
-                  _selectedImage!,
+                  currentProfilePicture,
                   height: 150,
                   width: 150,
                 ),
               ),
               const SizedBox(height: 20),
             ],
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                ),
-                onPressed: _saveProfilePicture,
-                child: const Text('Save'),
-              ),
-            ),
           ],
         ),
       ),

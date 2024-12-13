@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class PredictionProvider extends ChangeNotifier {
   // static const String apiUrl = "https://e1ba-35-231-35-118.ngrok-free.app/predict";
-  static const String apiUrl = "https://bc54-2001-448a-6000-da88-17f-b5f-c730-8f8a.ngrok-free.app/predict";
+  static const String apiUrl = "https://50d9-34-139-8-122.ngrok-free.app/predict";
   
   bool _isLoading = false;
   String? _lastResponse;

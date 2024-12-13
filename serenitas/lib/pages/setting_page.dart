@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:serenitas/controller/account.dart';
 import 'package:serenitas/widgets/list_tile.dart';
 import 'package:serenitas/widgets/section_header.dart';
 
@@ -7,6 +9,8 @@ class MySettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loginController = Provider.of<AccountData>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
@@ -22,21 +26,18 @@ class MySettingsPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
-                  // User avatar
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage(
-                        'assets/images/user_avatar.png'),
-                  ),
+                    backgroundImage: loginController.profilePicture != null
+                    ? MemoryImage(loginController.profilePicture!)
+                    : const AssetImage('assets/profile.png') as ImageProvider),
                   const SizedBox(width: 16),
-                  // User info
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        'Username',
-                        style: TextStyle(
-                          // color: Colors.white,
+                        loginController.currentUser ?? 'Guest',
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -80,7 +81,6 @@ class MySettingsPage extends StatelessWidget {
           ],
         ),
       ),
-      // backgroundColor: Colors.white,
     );
   }
 }
