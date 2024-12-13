@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               Provider.of<AccountData>(context).currentUser ?? 'Guest',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 // color: Colors.black,

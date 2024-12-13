@@ -8,10 +8,10 @@ class CustomDrawer extends StatefulWidget {
   final List<Map<String, String>> buttons;
 
   const CustomDrawer({
-    Key? key,
+    super.key,
     required this.boxColor,
     required this.buttons,
-  }) : super(key: key);
+  });
 
   @override
   _CustomDrawerState createState() => _CustomDrawerState();

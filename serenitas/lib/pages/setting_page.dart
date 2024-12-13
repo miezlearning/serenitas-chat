@@ -56,11 +56,6 @@ class MySettingsPage extends StatelessWidget {
                 Navigator.pushNamed(context, '/profile');
               },
             ),
-            CustomListTile(
-              icon: Icons.lock,
-              title: 'Privasi & Keamanan',
-              onTap: () {},
-            ),
             const SizedBox(height: 20),
             const SectionHeader(title: 'Pengaturan Aplikasi'),
             CustomListTile(
@@ -70,14 +65,8 @@ class MySettingsPage extends StatelessWidget {
                 Navigator.pushNamed(context, '/appearance');
               },
             ),
-            const SizedBox(height: 20),
-            const SectionHeader(title: 'Support'),
-            CustomListTile(
-              icon: Icons.info_outline,
-              title: 'About',
-              onTap: () {},
-            ),
-            const SizedBox(height: 16),
+
+        
           ],
         ),
       ),

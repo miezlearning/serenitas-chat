@@ -107,7 +107,7 @@ class MyHomePage extends StatelessWidget {
                       ],
                     )
                   : _buildWelcomeScreen(context, chatController),
-              drawer: CustomDrawer(
+              drawer: const CustomDrawer(
                 boxColor: Colors.purple,
                 buttons: [
                   {'name': 'Pengaturan', 'target': '/setting'},
@@ -138,18 +138,18 @@ class MyHomePage extends StatelessWidget {
           title: "Welcome",
           body:
               "Selamat datang di aplikasi Serenitas, dimana aku adalah teman curhat kamu.",
-          image: Center(child: Icon(Icons.info, size: 100.0)),
+          image: const Center(child: Icon(Icons.info, size: 100.0)),
         ),
         PageViewModel(
           title: "Fitur",
           body:
               "Aku bisa membantu kamu dalam berbagai hal, seperti memberikan saran atau sekedar mendengarkan.",
-          image: Center(child: Icon(Icons.featured_play_list, size: 100.0)),
+          image: const Center(child: Icon(Icons.featured_play_list, size: 100.0)),
         ),
         PageViewModel(
           title: "Get Started",
           body: "Let's get started!",
-          image: Center(child: Icon(Icons.start, size: 100.0)),
+          image: const Center(child: Icon(Icons.start, size: 100.0)),
         ),
       ];
 
@@ -168,13 +168,13 @@ class MyHomePage extends StatelessWidget {
             skip: const Text("Skip"),
             done: const Text("Done",
                 style: TextStyle(fontWeight: FontWeight.w600)),
-            dotsDecorator: DotsDecorator(
-              size: const Size(10.0, 10.0),
-              activeSize: const Size(22.0, 10.0),
+            dotsDecorator: const DotsDecorator(
+              size: Size(10.0, 10.0),
+              activeSize: Size(22.0, 10.0),
               color: Colors.blueAccent,
               activeColor: Colors.blue,
-              spacing: const EdgeInsets.symmetric(horizontal: 3.0),
-              activeShape: const RoundedRectangleBorder(
+              spacing: EdgeInsets.symmetric(horizontal: 3.0),
+              activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(25.0)),
               ),
             ),

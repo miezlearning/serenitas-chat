@@ -39,12 +39,12 @@ class MyApp extends StatelessWidget {
             home: MyHomePage(),
             initialRoute: '/',
             routes: {
-              '/profile': (context) => ProfilePage(),
-              '/appearance': (context) => AppearancePage(),
+              '/profile': (context) => const ProfilePage(),
+              '/appearance': (context) => const AppearancePage(),
               '/home': (context) => MyHomePage(),
-              '/setting': (context) => MySettingsPage(),
-              '/login': (context) => MyLoginPage(),
-              '/register': (context) => MySignUpPage(),
+              '/setting': (context) => const MySettingsPage(),
+              '/login': (context) => const MyLoginPage(),
+              '/register': (context) => const MySignUpPage(),
             },
           );
         },
